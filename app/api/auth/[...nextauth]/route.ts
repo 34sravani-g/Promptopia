@@ -1,9 +1,9 @@
-import NextAuth, { AuthOptions } from "next-auth";
+import NextAuth from "next-auth";
 import GoogleProvider from 'next-auth/providers/google';
 import { connectToDB } from "@utils/database";
 import User from "@models/user";
 
-const handler: AuthOptions = NextAuth({
+const handler = NextAuth({
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_ID as string,
